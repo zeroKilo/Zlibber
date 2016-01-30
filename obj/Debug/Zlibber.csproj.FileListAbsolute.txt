@@ -11,3 +11,17 @@ D:\CODE\c#\Zlibber\Zlibber\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\CODE\c#\Zlibber\Zlibber\bin\Debug\Be.Windows.Forms.HexBox.pdb
 D:\CODE\c#\Zlibber\Zlibber\bin\Debug\Be.Windows.Forms.HexBox.xml
 D:\CODE\c#\Zlibber\Zlibber\obj\Debug\Zlibber.csprojResolveAssemblyReference.cache
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\Zlibber.exe.config
+D:\CODE\GitHub\Zlibber\Zlibber\obj\Debug\Zlibber.exe
+D:\CODE\GitHub\Zlibber\Zlibber\obj\Debug\Zlibber.pdb
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\Zlibber.exe
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\Zlibber.pdb
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\Be.Windows.Forms.HexBox.dll
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\Be.Windows.Forms.HexBox.pdb
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\Be.Windows.Forms.HexBox.xml
+D:\CODE\GitHub\Zlibber\Zlibber\obj\Debug\Zlibber.csprojResolveAssemblyReference.cache
+D:\CODE\GitHub\Zlibber\Zlibber\obj\Debug\Zlibber.Form1.resources
+D:\CODE\GitHub\Zlibber\Zlibber\obj\Debug\Zlibber.Properties.Resources.resources
+D:\CODE\GitHub\Zlibber\Zlibber\obj\Debug\Zlibber.csproj.GenerateResource.Cache
+D:\CODE\GitHub\Zlibber\Zlibber\bin\Debug\LZOHelper.dll

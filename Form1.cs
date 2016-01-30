@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Be.Windows.Forms;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
+using LZOHelper;
 
 namespace Zlibber
 {
@@ -79,16 +80,29 @@ namespace Zlibber
             hb1.ByteProvider = new DynamicByteProvider(CompressZlib(m.ToArray()));
         }
 
+        public static byte[] CompressLZO(byte[] input)
+        {            
+            return LZOCompressor.Compress(input);
+        }
+        public static byte[] DecompressLZO(byte[] input)
+        {
+            return LZOCompressor.Decompress(input);
+        }
+
+
         public static byte[] DecompressZlib(byte[] input)
         {
-            int size = input.Length * 10;
-            byte[] result = new byte[size];
-            InflaterInputStream zipStream = new InflaterInputStream(new MemoryStream(input));
-            int read = zipStream.Read(result, 0, size);
-            zipStream.Flush();
-            MemoryStream m = new MemoryStream();
-            m.Write(result, 0, read);
-            return m.ToArray();
+            MemoryStream source = new MemoryStream(input);
+            byte[] result = null;
+            using (MemoryStream outStream = new MemoryStream())
+            {
+                using (InflaterInputStream inf = new InflaterInputStream(source))
+                {
+                    inf.CopyTo(outStream);
+                }
+                result = outStream.ToArray();
+            }
+            return result;
         }
 
         public static byte[] CompressZlib(byte[] input)
@@ -106,6 +120,22 @@ namespace Zlibber
             for (long i = 0; i < hb1.ByteProvider.Length; i++)
                 m.WriteByte(hb1.ByteProvider.ReadByte(i));
             hb2.ByteProvider = new DynamicByteProvider(DecompressZlib(m.ToArray()));
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            MemoryStream m = new MemoryStream();
+            for (long i = 0; i < hb2.ByteProvider.Length; i++)
+                m.WriteByte(hb2.ByteProvider.ReadByte(i));
+            hb1.ByteProvider = new DynamicByteProvider(CompressLZO(m.ToArray()));
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            MemoryStream m = new MemoryStream();
+            for (long i = 0; i < hb1.ByteProvider.Length; i++)
+                m.WriteByte(hb1.ByteProvider.ReadByte(i));
+            hb2.ByteProvider = new DynamicByteProvider(DecompressLZO(m.ToArray()));
         }
     }
 }
